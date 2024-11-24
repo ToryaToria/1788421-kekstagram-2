@@ -33,7 +33,6 @@ const createComment = () => ({
 // создание объекта
 const createPhoto = (index) => ({
   id: generatePhotoId(),
-  // url: !undefined ? `photos/${index}.jpg` : `photos/1.jpg` ,
   url: `photos/${index}.jpg`,
 
   description: DESCRIPTIONS[index],

@@ -13,12 +13,14 @@ const createThumbnail = ({ url, description, comments, likes }) => {
   const thumbnail = thumbnailTemplate.cloneNode(true);
 
   const img = thumbnail.querySelector('.picture__img');
+  const comments = thumbnail.querySelector('.picture__comments');
+  const likes = thumbnail.querySelector('.picture__likes');
 
   // заполняю данными шаблон
   img.src = url;
   img.alt = description;
-  thumbnail.querySelector('.picture__comments').textContent = comments.length;
-  thumbnail.querySelector('.picture__likes').textContent = likes;
+  comments.textContent = comments.length;
+  likes.textContent = likes;
   return thumbnail;
 };
 
@@ -32,4 +34,5 @@ const generateThumbnails = (pictures) => {
   });
   container.append(fragment);
 };
+
 export {generateThumbnails};
