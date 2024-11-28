@@ -2,6 +2,11 @@
 // получаю контент шаблона
 const thumbnailTemplate = document.querySelector('#picture').content;
 
+const img = thumbnailTemplate.querySelector('.picture__img');
+const comm = thumbnailTemplate.querySelector('.picture__comments');
+const like = thumbnailTemplate.querySelector('.picture__likes');
+
+
 // куда вставить все готовые фотки
 const container = document.querySelector('.pictures');
 
@@ -12,15 +17,15 @@ const createThumbnail = ({ url, description, comments, likes }) => {
   //клонирую шаблон
   const thumbnail = thumbnailTemplate.cloneNode(true);
 
-  const img = thumbnail.querySelector('.picture__img');
-  const comments = thumbnail.querySelector('.picture__comments');
-  const likes = thumbnail.querySelector('.picture__likes');
+  // const img = thumbnail.querySelector('.picture__img');
+  // const comm = thumbnail.querySelector('.picture__comments');
+  // const like = thumbnail.querySelector('.picture__likes');
 
   // заполняю данными шаблон
   img.src = url;
   img.alt = description;
-  comments.textContent = comments.length;
-  likes.textContent = likes;
+  comm.textContent = comments.length;
+  like.textContent = likes;
   return thumbnail;
 };
 
@@ -35,4 +40,4 @@ const generateThumbnails = (pictures) => {
   container.append(fragment);
 };
 
-export {generateThumbnails};
+export { generateThumbnails };
