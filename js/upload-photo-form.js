@@ -1,5 +1,7 @@
 import { isEscapeKey } from './util';
 import { pristine } from './formValid';
+import { resetScale } from './scaleformValid';
+
 //==========================
 
 
@@ -51,9 +53,10 @@ const onDocumentKeydown = (evt) => {
 
 // функция закрытия МО
 const hideModal = () => {
-  // сбрасываем все данные для формы и для пристин
+  // сбрасываем все данные для формы, для пристин, для масштабирования, для эффектов
   uploadForm.reset();
   pristine.reset();
+  resetScale();
 
   overlay.classList.add('hidden');
   BodyElement.classList.remove('modal-open');
