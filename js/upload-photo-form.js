@@ -1,7 +1,7 @@
 import { isEscapeKey } from './util';
 import { pristine } from './formValid';
 import { resetScale } from './scale';
-
+export { initEffect, resetEffect } from './effects';
 //==========================
 
 
@@ -57,6 +57,7 @@ const hideModal = () => {
   uploadForm.reset();
   pristine.reset();
   resetScale();
+  resetEffect();
 
   overlay.classList.add('hidden');
   BodyElement.classList.remove('modal-open');
@@ -72,6 +73,9 @@ const showModal = () => {
 
   //валидирую форму
   pristine.validate();
+
+  // добваляю эффекты
+  initEffect();
 
   // добавить обработчик нажатия Esc
   document.addEventListener('keydown', onDocumentKeydown);
