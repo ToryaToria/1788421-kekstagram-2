@@ -14,20 +14,20 @@ const scaleInput = elementUpload.querySelector('.scale__control--value');
 // функция для изменения размеров изображения
 const scaleImg = (value) => {
   // в тег <img> записываем свойство transform: scale(значение делить на 100) - scale от 0 до 1.
-  imgPreviw.style.transform =`scale(${value / 100})`;
+  imgPreviw.style.transform = `scale(${value / 100})`;
 
   // в поле записываем значение ползунка
   scaleInput.value = `${value}%`;
 };
 
 //функция для клика по кнопке "-"
-const onSmallerClick = (value) => {
+const onSmallerClick = () => {
   // выбирает максимум между значением ползунка и минимальным
   scaleImg(Math.max(parseInt(scaleInput.value, 10) - STEP, MIN));
 };
 
 //функция для клика по кнопке "+"
-const onBiggerClick = (value) => {
+const onBiggerClick = () => {
   // выбирает минимум между значением ползунка и максимальным
   scaleImg(Math.min(parseInt(scaleInput.value, 10) + STEP, MAX));
 };

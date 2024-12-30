@@ -51,7 +51,7 @@ const isHashtagsValid = (value) => {
 
   const inputArray = inputText.split(' ');
 
-  const hashArray = inputText.split(' ');
+  // const hashArray = inputText.split(' ');
 
   const rules = [
 
@@ -93,7 +93,6 @@ const isHashtagsValid = (value) => {
     //   error: ' строка после решётки должна состоять из букв и чисел',
     // },
 
-    
     {
       check: inputArray.some((item) => item[0] !== '#'),
       error: '1. хештег должен начинаеться с #'
@@ -102,7 +101,7 @@ const isHashtagsValid = (value) => {
     {
       check: inputArray.some((item) => item === '#'),
 
-      check: inputArray.some((item) => item.length === 1),
+      // check: inputArray.some((item) => item.length === 1),
       error: '2. хештег не может состоять только из #'
     },
 
@@ -117,11 +116,10 @@ const isHashtagsValid = (value) => {
     },
 
     {
-
-    //  check: inputArray.some((item) => !/^#[a-zа-яё0-9]{1,19}$/i.test(item)),
+      //  check: inputArray.some((item) => !/^#[a-zа-яё0-9]{1,19}$/i.test(item)),
 
       check: inputArray.some((item) => !VALID_SYMBOLS.test(item.slice(1))),
-      error: `5. Недопустимые символы после #, можно только цифры и буквы`
+      error: '5. Недопустимые символы после #, можно только цифры и буквы',
     },
 
     {
@@ -152,14 +150,14 @@ const isCommentValid = (comment) => {
   return comment.length <= MAX_COMMENT_COUNT;
 };
 
-pristine.addValidator (
+pristine.addValidator(
   hashtagFiled,
   isHashtagsValid,
   error,
   1,
   false);
 
-pristine.addValidator (
+pristine.addValidator(
   commentFiled,
   isCommentValid,
   `Не больше ${MAX_COMMENT_COUNT} символов`,
