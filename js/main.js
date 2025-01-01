@@ -12,3 +12,5 @@ rendsrGallery(PhotosArray());
 import './upload-photo-form.js';
 import './formValid.js';
 import './scale.js';
+
+import './effects_19.js';

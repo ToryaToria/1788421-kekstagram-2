@@ -1,7 +1,9 @@
 import { isEscapeKey } from './util';
 import { pristine } from './formValid';
 import { resetScale } from './scale';
-export { initEffect, resetEffect } from './effects';
+import { initEffect, 
+  resetEffect
+ } from './effects_19';
 //==========================
 
 
@@ -57,6 +59,7 @@ const hideModal = () => {
   uploadForm.reset();
   pristine.reset();
   resetScale();
+
   resetEffect();
 
   overlay.classList.add('hidden');
