@@ -1,0 +1,52 @@
+const effects = [
+  {
+    name: 'noneaaaaaaaaaa',
+    effect: {
+      stule: '',
+      unit: ''
+    },
+    options: '0',
+    sliderOptions: {
+      min: 0,
+      max: 100,
+      step: 1,
+    }
+  }
+  ,
+
+  {
+    name: 'chrome',
+    effect: {
+      stule: 'greyscale',
+      unit: ''
+    },
+    sliderOptions: {
+      min: 0,
+      max: 1,
+      step: 0.1,
+    }
+  },
+  {
+    name: 'sepia',
+    effect: {
+      stule: 'sepia',
+      unit: ''
+    },
+    sliderOptions: {
+      min: 0,
+      max: 1,
+      step: 0.1,
+    }
+  }
+];
+
+console.log(effects[0]);
+let el2 = effects[1];
+
+console.log(el2.name);
+((word) => word.length > 6);
+let find = effects.filter((elem) => elem.name === 'sepia');
+let findIndex = effects.findIndex((elem) => elem.name === 'sepia');
+
+console.log(find);
+console.log(findIndex);

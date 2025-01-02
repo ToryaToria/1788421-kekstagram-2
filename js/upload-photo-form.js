@@ -1,9 +1,10 @@
 import { isEscapeKey } from './util';
 import { pristine } from './formValid';
 import { resetScale } from './scale';
-import { initEffect, 
+import {
+  initEffect,
   resetEffect
- } from './effects_19';
+} from './effects_19';
 //==========================
 
 
