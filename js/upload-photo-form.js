@@ -1,12 +1,16 @@
 import { isEscapeKey } from './util';
 import { pristine } from './formValid';
 import { resetScale } from './scale';
-import {
-  initEffect,
-  resetEffect
-} from './effects_19';
-//==========================
 
+// import {
+//   initEffect,
+//   resetEffect
+// } from './effects_19';
+
+import { onEffectChange } from './effects_1';
+
+
+//==========================
 
 // форма загрузки нового изображения
 const uploadForm = document.querySelector('.img-upload__form');
@@ -61,7 +65,7 @@ const hideModal = () => {
   pristine.reset();
   resetScale();
 
-  resetEffect();
+  // resetEffect();
 
   overlay.classList.add('hidden');
   BodyElement.classList.remove('modal-open');
@@ -79,7 +83,7 @@ const showModal = () => {
   pristine.validate();
 
   // добваляю эффекты
-  initEffect();
+  // initEffect();
 
   // добавить обработчик нажатия Esc
   document.addEventListener('keydown', onDocumentKeydown);
@@ -100,3 +104,6 @@ export {
   hashtagFiled,
   commentFiled
 };
+
+const effests = document.querySelector('.effects');
+effests.addEventListener('change', onEffectChange);

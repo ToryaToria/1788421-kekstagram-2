@@ -52,19 +52,6 @@ const effects = [
   },
 
   {
-    name: 'heat',
-    effect: {
-      style: 'brightness',
-      unit: ' ',
-    },
-    sliderOptions: {
-      min: 1,
-      max: 3,
-      step: 0.1,
-    },
-  },
-
-  {
     name: 'phobos',
     effect: {
       style: 'blur',
