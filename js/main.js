@@ -13,5 +13,7 @@ import './upload-photo-form.js';
 import './formValid.js';
 import './scale.js';
 
+import './effects_19_1.js';
+
 // import './effects_19.js';
-import './effects_1.js';
+// import './effects_1.js';

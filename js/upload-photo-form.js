@@ -2,12 +2,14 @@ import { isEscapeKey } from './util';
 import { pristine } from './formValid';
 import { resetScale } from './scale';
 
-// import {
-//   initEffect,
-//   resetEffect
+import {
+  initEffect,
+  resetEffect
 // } from './effects_19';
+} from './effects_19_1';
 
-import { onEffectChange } from './effects_1';
+
+// import { onEffectChange } from './effects_1';
 
 
 //==========================
@@ -65,7 +67,7 @@ const hideModal = () => {
   pristine.reset();
   resetScale();
 
-  // resetEffect();
+  resetEffect();
 
   overlay.classList.add('hidden');
   BodyElement.classList.remove('modal-open');
@@ -83,7 +85,7 @@ const showModal = () => {
   pristine.validate();
 
   // добваляю эффекты
-  // initEffect();
+  initEffect();
 
   // добавить обработчик нажатия Esc
   document.addEventListener('keydown', onDocumentKeydown);
@@ -105,5 +107,5 @@ export {
   commentFiled
 };
 
-const effests = document.querySelector('.effects');
-effests.addEventListener('change', onEffectChange);
+// const effests = document.querySelector('.effects');
+// effests.addEventListener('change', onEffectChange);
