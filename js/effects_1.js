@@ -1,4 +1,5 @@
-//=========================
+//ДЗ 9.2 по видео 9#1 ("НЕправильный" вариант)
+
 // секция
 const elementUpload = document.querySelector('.img-upload');
 

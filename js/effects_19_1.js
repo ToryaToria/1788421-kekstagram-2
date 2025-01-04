@@ -1,3 +1,7 @@
+//ДЗ 9.2 без лишних функций
+
+// https://www.figma.com/board/ilaF12cQmmuKArefNUf582/Untitled?node-id=0-1&p=f&t=pLdWczMJ3VE5vhBA-0
+
 const effects = [
   {
     name: 'none',
@@ -101,11 +105,9 @@ const inputSlider = sliderContainer.querySelector('.effect-level__value');
 let chosenEffect = effects[0];
 //======================
 
-//8
 const isDefault = () => chosenEffect.name === 'none';
 
-//++++++++++++++++++++++++++++ самая сложная ф-ция!
-//5
+// добавление атрибута filter: на <img>
 const setImgStyle = () => {
   if (isDefault()) {
     imgPreview.style.filter = null;
@@ -118,78 +120,64 @@ const setImgStyle = () => {
 
   imgPreview.style.filter = `${st}(${value}${un})`;
 };
-//++++++++++++++++++++++++++++
-// 3
+
 // отслеживание изменений значения ползуека
 const onSliderUpdate = () => {
   inputSlider.value = slider.noUiSlider.get();
- 
   setImgStyle();
 };
 
-//++++++++++++++++++++++++++++
-
-// 9
+// обновление параметров слайдера при изменнении ползунка
 const updateSlider = ({ min, max, step }) => {
   slider.noUiSlider.updateOptions({
     range: { min, max },
     step,
-    start: max, // зачем? можно без него?
+    start: max, // зачем? можно без него? - ОООчень нужен! без него ползунок становится на разных фильтрах в разных местах
   });
 };
-//++++++++++++++++++++++++++++
-//7
+
+// показать-скрыть слайдер и обновить
 const setSlider = () => {
-  //8-isDefault
   if (isDefault()) {
     sliderContainer.classList.add('hidden');
   } else {
 
-    // 9-updateSlider
     updateSlider(chosenEffect.sliderOptions);
     sliderContainer.classList.remove('hidden');
-
   }
 };
 
-//++++++++++++++++++++++++++++
- 
-// 2
+// выбор эффекта
 const onEffectsChange = (evt) => {
- 
+
   const effect = evt.target.value;
   chosenEffect = effects.find((elem) => elem.name === effect);
 
-   setSlider();
+  setSlider();
   setImgStyle();
 };
-//++++++++++++++++++++++++++++
 
 // инициализация слайдера
 const initEffect = () => {
   sliderContainer.classList.add('hidden');
- 
-noUiSlider.create(slider, {
-  range: {
-    min: 0,
-    max: 1,
-  },
 
-  step: 0.1,
-  start: 1,
-  connect: 'lower',
+  noUiSlider.create(slider, {
+    range: {
+      min: 0,
+      max: 0.1,
+    },
 
-  format: {
-    to: (value) => Number(value),
-    from: (value) => Number(value),
-  },
-});
+    step: 0.1,
+    start: 1,
+    connect: 'lower',
 
-// 3-onSliderUpdate
-slider.noUiSlider.on('update', onSliderUpdate);
+    format: {
+      to: (value) => Number(value),
+      from: (value) => Number(value),
+    },
+  });
 
-  // 2-onEffectsChange
-  // выбор эффекта
+  slider.noUiSlider.on('update', onSliderUpdate);
   effests.addEventListener('change', onEffectsChange);
 };
 
@@ -198,12 +186,10 @@ const resetEffect = () => {
   // setEffect(effects[0]);
   effests.removeEventListener('change', onEffectsChange);
 
-  // slider.noUiSlider.off(); - // как правильно задать параметр для off
+  // slider.noUiSlider.off(onSliderUpdate); - // как правильно задать параметр для off
   slider.noUiSlider.destroy();
   // alert('ok');
 };
-//++++++++++++++++++++++++++++
-
 
 export {
   initEffect,

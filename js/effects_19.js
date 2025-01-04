@@ -1,3 +1,4 @@
+// ДЗ 9-2 по видео модуля 9 №19
 const effects = [
   {
     name: 'none',
