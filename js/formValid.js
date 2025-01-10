@@ -54,45 +54,7 @@ const isHashtagsValid = (value) => {
   // const hashArray = inputText.split(' ');
 
   const rules = [
-
-    // {
-    //   check: hashArray.some((hash) => hash.slice(1).includes('#')),
-    //   error: ' хэштеги разделяются пробелами',
-    // },
-    // {
-    //   check: hashArray.some((hash) => hash[0] !== '#'),
-    //   error: ' хэштег начинается с символа # (решётка)',
-    // },
-    // {
-    //   check: hashArray.some((hash) => hash === '#'),
-    //   error: ' хеш-тег не может состоять только из одной решётки',
-    // },
-    // {
-    //   check: hashArray.some(
-    //     (hash) => !/^[a-zа-яё0-9]{1,19}$/i.test(hash.slice(1))
-    //   ),
-    //   error: ' строка после решётки должна состоять из букв и чисел',
-    // },
-    // {
-    //   check: hashArray.some((hash) => hash.length > 7),
-    //   error:  `максимальная длина одного хэштега 7 символов, включая решётку,`
-    // },
-    // {
-    //   check: hashArray.length > 5,
-    //   error:  `нельзя указать больше $5 хэштегов`,
-    // },
-    // {
-    //   check: [...new Set(hashArray)].length !== hashArray.length,
-    //   error: ' один и тот же хэштег не может быть использован дважды',
-    // },
-
-    //     {
-    //   check: hashArray.some(
-    //     (hash) => !/^[a-zа-яё0-9]{1,19}$/i.test(hash.slice(1))
-    //   ),
-    //   error: ' строка после решётки должна состоять из букв и чисел',
-    // },
-
+  
     {
       check: inputArray.some((item) => item[0] !== '#'),
       error: '1. хештег должен начинаеться с #'
