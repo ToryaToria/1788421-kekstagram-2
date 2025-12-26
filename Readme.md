@@ -1,10 +1,8 @@
 # Учебный проект «Кекстаграм»
 
-## Профессиональный онлайн‑курс HTML Academy <br> «JavaScript. Профессиональная разработка веб-интерфейсов»
-
 <a href="https://htmlacademy.ru/intensive/javascript"><img align="left" width="50" height="50" alt="HTML Academy" src="https://up.htmlacademy.ru/static/img/intensive/javascript/logo-for-github-2.png"></a>
 
-Репозиторий создан для обучения на профессиональном онлайн‑курсе «[JavaScript. Профессиональная разработка веб-интерфейсов, уровень 1](https://htmlacademy.ru/intensive/javascript)» от [HTML Academy](https://htmlacademy.ru).
+Репозиторий создан для обучения на профессиональном онлайн‑курсе <br> «[JavaScript. Профессиональная разработка веб-интерфейсов, уровень 1](https://htmlacademy.ru/intensive/javascript)» от [HTML Academy](https://htmlacademy.ru).
 
 
 <details><summary><h4>Курс пройден в 2025 году</h4></summary>
