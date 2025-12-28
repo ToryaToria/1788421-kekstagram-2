@@ -5,7 +5,7 @@
 Репозиторий создан для обучения на профессиональном онлайн‑курсе <br> «[JavaScript. Профессиональная разработка веб-интерфейсов](https://htmlacademy.ru/intensive/javascript)» от [HTML Academy](https://htmlacademy.ru).
 
 <details><summary><h4>Курс пройден в 2025 году</h4></summary>
-<img src="./protection.png" width="420" height="256" alt="результаты защиты проекта"> <br>
+<img src="./readme/protection.png" width="420" height="256" alt="результаты защиты проекта"> <br>
 </details>
 
 - Студент: [Виктория Калугина](https://up.htmlacademy.ru/javascript-individual/2/user/1788421).
